@@ -1,9 +1,13 @@
 # file_one.py
 
 #functions
+
 def my_function(in_value):
     print('value passed to the function "my_function":', in_value)
     return 0
+
+def my_func_get_input():
+    return input()
 
 #main
 print('Hello, World') #command line output
