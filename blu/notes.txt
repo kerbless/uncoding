@@ -1,0 +1,1 @@
+A program to pause and resume spotify audio automatically when starting/stopping youtube videos (and other videos?)
