@@ -19,6 +19,7 @@ ls_interfaces_list = re.split('\n', ls_interfaces_str)
 #comparing airmon and ls - getting final interface
 #interfaces_set = ls_interfaces_set.difference(airmon_ng_set)
 #interfaces_list = list(interfaces_set)
+'''
 found = 0 
 interfaces_list = []
 for i in range(len(airmon_ng_list)):
@@ -26,6 +27,14 @@ for i in range(len(airmon_ng_list)):
         if (ls_interfaces_list[j] == airmon_ng_list[i]):
             interfaces_list[found] == ls_interfaces_list[j]
             found += 1
+'''
+interfaces_list = [0, 0, 0, 0]
+f = 0
+for i in airmon_ng_list:
+    for j in ls_interfaces_list:
+        if i == j:
+            interfaces_list[f] = j
+            f += 1
 
 #printing (verbosity)
 print("\nThe airmon_ng_list:")
