@@ -50,10 +50,11 @@ print(p_info + "Changing card mode to monitor..." + p_end)
 subprocess.run(['sudo', 'airmon-ng', 'start', interface_selected], stdout = subprocess.PIPE) #TODO get continued output right (new shell?)
 print(p_ok + "Done, card ready in monitor mode" + p_end)
 interface_selected = interface_selected+"mon"
-
+'''
 #getting dumps
 print(p_info + "Running airodump, getting data...")
 airodump = subprocess.run(['sudo', 'airodump-ng', interface_selected], stdout = subprocess.PIPE)
+'''
 #exiting routine
 print(p_info + "Initializing exiting routine..." + p_end)
 print(p_info + "Restoring network configuration..." + p_end)
