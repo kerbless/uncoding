@@ -13,7 +13,7 @@ import sys
 
 #global settings
 min_args = 2
-max_args = 3
+max_args = 2
 prog_name = "main2.py"
 
 #text output dict 
@@ -29,9 +29,8 @@ def display(text):
         print("\nFound these interfaces:\n") 
         print(ls_interfaces_list)
     elif(text == 'help'):
-        print("Please use: " + prog_name + " [verbosity] [option]\n\n")
+        print("Please use: " + prog_name + " [verbosity]\n")
         print("Verbosity:\n\t0 = None\n\t1 = Standard\n\t2 = Max")
-
     else:
         print("")
 
@@ -70,6 +69,14 @@ for i in airmon_ng_list:
     for j in ls_interfaces_list:
         if i == j:
             interface_selected = j
+
+#starting airmon-ng
+airmon_ng_setup = subprocess.run(['sudo', 'airmon-ng', 'check', 'kill'],
+        stdout = subprocess.PIPE)
+if((str(object=airmon_ng_setup.stdout, encoding='utf-8')) == ""):
+    print("airmon-ng check kill succesfully excecuted")
+else:
+    pri
 
 #verbosity
 if(verbosity == 1):
