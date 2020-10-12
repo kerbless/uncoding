@@ -12,13 +12,23 @@ int main() {
 	printf("\tSOLVE A SECOND GRADE EQUATION");
 	printf("\nPlease insert a,b,c like in (ax^2+bx+c=0)");
 	printf("\nInsert a: ");
-	scanf(a);
+	scanf("%lf", &a);
 	printf("\nInsert b: ");
-	scanf(b);
+	scanf("%lf", &b);
 	printf("\nInsert c: ");
-	scanf(c);
+	scanf("%lf", &c);
 	delta = b*b-4*a*c;
-
-	printf("\nDelta is: "(delta; //%lf is for double variables
-	
+	printf("\nDelta is: %.3lf", delta); //.3 is the decimal approx.
+	if(delta >= 0) {
+		if(delta > 0) {
+			x1 = (-b+sqrt(delta))/(2*a);
+			x2 = (-b-sqrt(delta))/(2*a);	
+		}
+		else {
+			x1 = 0;
+			x2 = -b/(2*a);
+		}
+	printf("\nSolutions are, x1 = %.3lf and x2 = %.3lf", x1, x2);	
+	}
+	else { printf("\nThere are no real solutions.");}
 }
