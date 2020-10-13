@@ -13,9 +13,9 @@ int main() {
 	printf("\nPlease insert a,b,c like in (ax^2+bx+c=0)");
 	printf("\nInsert a: ");
 	scanf("%lf", &a);
-	printf("\nInsert b: ");
+	printf("Insert b: ");
 	scanf("%lf", &b);
-	printf("\nInsert c: ");
+	printf("Insert c: ");
 	scanf("%lf", &c);
 	delta = b*b-4*a*c;
 	printf("\nDelta is: %.3lf", delta); //.3 is the decimal approx.
