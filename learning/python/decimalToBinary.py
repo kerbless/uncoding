@@ -17,6 +17,9 @@ while(True): #wait for decimal to be 0
         break #emulates a do-while loop
 
 rests.reverse() #reverse the list
+
+#manage negative numbers with two's complement
+
 print(f"Binary: {rests}")
 
 '''
