@@ -1,12 +1,18 @@
 //Libs
 #include <stdio.h>
 
+void validatedScanf() { //Trying to make a function that validates the input, but is hard to manage memory and strings in C
+	char* in = "";
+	scanf("%s", in);
+	printf("%s", in);
+}
+
+
 //Main
 int main(int argc, char* argv[]){
 	//Vars
 	float i_price = 0.0, total = 0.0, i_quantity = 0;
         int base_discount = 5, upgraded_discount = 10, finished = 0;
-
 	while(0 == 0){ //infinite, will wait for finished = 1 to break (like a do-while)
 		printf("\n\tADD PRODUCTS TO CART\nInstert product price: ");
 		scanf("%f", &i_price);
