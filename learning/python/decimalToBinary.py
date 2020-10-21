@@ -12,12 +12,12 @@ def decToBin(decimal):
 
 def Twos(binary):
     '''makes a binary number (list) negative (list)'''
-    size = 8 #1 byte 
-    missing = size - len(binary)
-    paddng = []
-    for i in range(missing): #0 to missing
-        paddng = [0] + paddng
-    binary = paddng + binary
+    #size = 8 #1 byte 
+    #missing = size - len(binary)
+    #paddng = []
+    #for i in range(missing): #0 to missing
+    #    paddng = [0] + paddng
+    #binary = paddng + binary
     buff = []
     for i in binary:
         if i == 0:
@@ -25,7 +25,7 @@ def Twos(binary):
         else:
             buff.append(0)
     
-    '''gets a binary and returns a decimal value as an int'''
+    '''gets a binary and returns a decimal value as an int so i can add 1'''
     intx = 0
     for i in range(len(buff)): 
         intx = intx + (buff[i]*(2**i))
@@ -42,7 +42,7 @@ def listToStr(list_):
     return out
 
 #__________________MAIN____________________
-print("\tFROM DECIMAL TO BINARY\n\t(working in 8-bit mode)") #TITLE
+print("\tFROM DECIMAL TO BINARY") #TITLE
 
 #getting decimal, it will ask for it again if int() returns a ValueError (improper value) 
 while(True):
