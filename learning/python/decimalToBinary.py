@@ -3,37 +3,41 @@ def decToBin(decimal):
     rests = [] #declare list
     while (True): #wait for decimal to be 0
         rest = decimal % 2
-        decimal = decimal // 2 # // is the integer division, no rest.
+        decimal = decimal // 2 # 0// is the integer division, no rest.
         rests.append(rest)
         if (decimal == 0):
             break #emulates a do-while loop
     rests.reverse() #reverse the list
-    return rests 
+    return rests
 
 def Twos(binary):
     '''makes a binary number (list) negative (list)'''
+    #adds padding zeros to match binary size
     #size = 8 #1 byte 
     #missing = size - len(binary)
     #paddng = []
     #for i in range(missing): #0 to missing
     #    paddng = [0] + paddng
-    #binary = paddng + binary
+    #    binary = paddng + binary
+    
+    print(binary)
     buff = []
     for i in binary:
         if i == 0:
             buff.append(1)
-        else:
+        elif i == 1:
             buff.append(0)
-    
+    print(buff)
     '''gets a binary and returns a decimal value as an int so i can add 1'''
     intx = 0
     for i in range(len(buff)): 
         intx = intx + (buff[i]*(2**i))
-    intx+1
+        print(intx)
+    intx += 1
     
     out = decToBin(intx)
     return out
-    
+
 def listToStr(list_):
     '''convert list to string'''
     out = ""
@@ -61,7 +65,6 @@ elif (in_ < 0): #IN < O (manage negative numbers with two's complement)
     in_ = in_*-1
     binary = decToBin(in_)
     binary = Twos(binary)
-    
     out = listToStr(binary)
 else: #IN = 0
     out = "0"
