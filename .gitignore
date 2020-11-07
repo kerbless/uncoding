@@ -1,4 +1,5 @@
 .vscode
 .out
 .
-blu/memory.exe
+.exe
+.o
