@@ -1,21 +1,42 @@
+import time
+
 colors = {
-    'reset' : '\033[0m', # color reset (/)
-    'green' : '\033[0;32m', # color good (green)
-    'red' : '\033[0;31m', #color bad (red)
-    'light blue' : '\033[0;34m', #color info (light blue)
-    'data' : '\033[1m' #what  color is thissss
+    'Reset'  : '\033[0m',      # Reset
+    'Black'  : '\033[0;30m',   # Black
+    'Red'    : '\033[0;31m',   # Red
+    'Green'  : '\033[0;32m',   # Green
+    'Yellow' : '\033[0;33m',   # Yellow
+    'Blue'   : '\033[0;34m',   # Blue
+    'Purple' : '\033[0;35m',   # Purple
+    'Cyan'   : '\033[0;36m',   # Cyan
+    'White'  : '\033[0;37m'   # White
     }
-p_info = (colors['light_blue'] + "[INFO] ") 
-p_ok = (colors['green'] + "[OK] ") 
-p_error = (colors['red'] + "[ERROR] ") 
-p_data = (colors['data'] + " -> ")
-p_end = ("" + colors['reset'])
+
+p_info = (colors['Blue'] + '[INFO] ') 
+p_ok = (colors['Green'] + '[OK] ') 
+p_error = (colors['Red'] + '[ERROR] ') 
+p_in = (colors['Yellow'] + '[IN] ')
+p_end = ('' + colors['Reset'])
 
 def slowprint(string):
     for i in string:
-        print(i, end="", flush=True)
-        time.sleep(.1)
-    print("") #Saves the newline function at the end of every slowprint()
+        print(i, end='', flush=True)
+        time.sleep(.02)
+    print('') #Saves the newline function at the end of every slowprint()
 
-def printInfo(text)
-    slowprint()
+def slowprint_continue(string):
+    for i in string:
+        print(i, end='', flush=True)
+        time.sleep(.02)
+
+def printInfo(text):
+    slowprint(p_info + p_end + text)
+
+def printError(text):
+    slowprint(p_error + p_end + text)
+
+def printOk(text):
+    slowprint(p_ok + p_end + text)
+
+def printIn(text):
+    slowprint_continue(p_in + p_end + text)
