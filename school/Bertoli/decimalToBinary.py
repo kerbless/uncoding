@@ -10,33 +10,34 @@ def decToBin(decimal):
     rests.reverse() #reverse the list
     return rests
 
+def binToDec(binary):
+    '''gets a binary (list) and returns a decimal value as an int'''
+    dec = 0
+    for i in range(len(binary)): #same as range(0, last list item index, 1)
+        weight = len(binary)-i
+        dec = dec + (binary[i]*(2**weight))
+    return dec
+
+    
 def Twos(binary):
-    '''makes a binary number (list) negative (list)'''
-    #adds padding zeros to match binary size
-    #size = 8 #1 byte 
-    #missing = size - len(binary)
-    #paddng = []
-    #for i in range(missing): #0 to missing
-    #    paddng = [0] + paddng
-    #    binary = paddng + binary
-    
+    '''Returns the negative binary using the two's complement (https://en.wikipedia.org/wiki/Two%27s_complement)'''
     print(binary)
-    buff = []
-    for i in binary:
-        if i == 0:
-            buff.append(1)
-        elif i == 1:
-            buff.append(0)
-    print(buff)
-    '''gets a binary and returns a decimal value as an int so i can add 1'''
-    intx = 0
-    for i in range(len(buff)): 
-        intx = intx + (buff[i]*(2**i))
-        print(intx)
-    intx += 1
-    
-    out = decToBin(intx)
-    return out
+    binary.insert(0, 0) #add leading 0 if not present
+    print(binary)
+    for index, item in enumerate(binary): #enumerate returns first the index and then the item.
+        if item == 0:
+            binary[index] = 1
+        elif item == 1:
+            binary[index] = 0
+    print(binary)
+    dec = binToDec(binary)
+    print(dec)
+    dec += 1
+    print(dec)
+    binary = decToBin(dec)
+    print(binary)
+    return binary
+
 
 def listToStr(list_):
     '''convert list to string'''
