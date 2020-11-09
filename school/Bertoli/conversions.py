@@ -25,7 +25,7 @@ cToHex = { #There should be a way to use hexToC with a for cicle without having 
     'E' : 14,
     'F' : 15
     }
-hexValidChars = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e', 'f','A','B','C','D','E','F','-']
+hexValidChars = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f','A','B','C','D','E','F','-']
 octValidChars = ['0','1','2','3','4','5','6','7','-']
 binValidChars = ['0','1','-']
 
@@ -105,12 +105,6 @@ def menuConversion():
             error = 'You didn\'t enter valid number'
         except ValueError:
            error = 'You didn\'t enter a number'
-def printResult(result):
-    clear()
-    #print('_________________________')
-    printOk('Result calculated')
-    printInfo(f'Your result is: =>| {result} |<=')
-    #print('_________________________')
 def getDec():
     while(True):
         try:
@@ -152,20 +146,15 @@ def getHex():
         try:
             printIn('Insert and integer hexadecimal number: ')
             in_ = input()
-            for inputChar in in_: #checks every chars for validity
-                charChecked = False
-                for valid in hexValidChars: 
-                    if inputChar == valid:
-                        charChecked = True
-                        break
-                assert charChecked == True
+            assert checkChars(in_, hexValidChars) == True
             return in_
         except AssertionError:
             printError('This is not an hexadecimal number!')
 
 #conversion functions
-def decToBin(decimal):
+def decToBin(decimal_str):
     '''gets a integer and returns the binary value as string'''
+    decimal = int(decimal_str)
     if (decimal > 0):
         rests = [] #declare list
         while (True): #wait for decimal to be 0
@@ -175,10 +164,10 @@ def decToBin(decimal):
             if (decimal == 0):
                 break #emulates a do-while loop
         rests.reverse() #reverse the list
-        out = listToStr(rests)
-        return out
+        binary = listToStr(rests)
+        return binary
         
-    elif (False): #TODO finish the negative binary setup with no sign
+    elif (False): #TODO this code is unreachable, was first made to implement negative binary with two's complement. Now abandoned.
             decimal = -decimal 
             rests = [] #declare list
             while (True): #wait for decimal to be 0
@@ -189,32 +178,26 @@ def decToBin(decimal):
                     break #emulates a do-while loop
             rests.reverse() #reverse the list
             binary = [0] + rests #add leading 0 if not present
-            print(binary) #TODO remove, develop use
-            input()
             for index, item in enumerate(binary): #enumerate returns first the index and then the item.
                 if item == 0:
                     binary[index] = 1
                 elif item == 1:
                     binary[index] = 0
-            print(binary) #TODO remove, develop use
-            input()
             temp_decimal = 0
             for i in range(len(binary)):
                 temp_decimal += binary[i]*2**(len(binary)-1-i)
-            print(temp_decimal)
-            input()
             temp_decimal += 1
             binary = decToBin(temp_decimal)
-            print(binary)
-            input()
             return binary
+
     elif (decimal < 0):
-        decimal = -decimal
-        return "-" + decToBin(decimal)
+        decimal = str(-decimal)
+        return ('-' + decToBin(decimal))
     else:
         return '0'
-def decToOct(decimal):
-    '''gets a integer and returns the octal value as string'''
+def decToOct(decimal_str):
+    '''gets a decimal string and returns the octal value as string'''
+    decimal = int(decimal_str)
     if (decimal > 0):
         rests = [] #declare list
         while (True): #wait for decimal to be 0
@@ -224,15 +207,16 @@ def decToOct(decimal):
             if (decimal == 0):
                 break #emulates a do-while loop
         rests.reverse() #reverse the list
-        out = listToStr(rests)
-        return out
+        octal = listToStr(rests)
+        return octal
     elif (decimal < 0):
-        decimal = -decimal
-        return "-" + decToOct(decimal)
+        decimal = str(-decimal)
+        return ("-" + decToOct(decimal))
     else:
         return '0'
-def decToHex(decimal):
-    '''gets a decimal int and returns a hexadecimal string'''
+def decToHex(decimal_str):
+    '''gets a decimal string and returns a hexadecimal string'''
+    decimal = int(decimal_str)
     if (decimal > 0):
         rests = [] #declare list
         while (True): #wait for decimal to be 0
@@ -240,111 +224,178 @@ def decToHex(decimal):
             decimal = decimal // 16 # 0// is the integer division, no rest.
             if (rest > 9):
                 rest = hexToC[rest]
-            rests.append(str(rest))
+            rests.append(str(rest).upper()) #makes sure that letters are uppercase when making an hexadecimal number (TODO: is this useful?)
             if (decimal == 0):
                 break #emulates a do-while loop
         rests.reverse() #reverse the list
-        out = listToStr(rests)
-        return out
+        hexadecimal = listToStr(rests)
+        return hexadecimal
     elif (decimal < 0):
-        decimal = -decimal
+        decimal = str(-decimal)
         return "-" + decToHex(decimal)
     else:
         return '0'
 def binToDec(binary):
-    '''gets a binary string and returns a decimal int'''
+    '''gets a binary string and returns a string decimal'''
     if (int(binary) > 0): #i can do this because binary is considered a full int
         decimal = 0
         binary_list = [int(x) for x in str(binary)] #this converts the binary int to a list of digits
         for index, value in enumerate(binary_list):
             #print(f'Index: {index}\nValue: {value}\nDecimal: {decimal}\n(len(binary)-1-index): {(len(binary_list)-1-index)}')
             decimal += value*2**(len(binary_list)-1-index)
-        return decimal
-    else:
+        return str(decimal)
+    elif (int(binary) < 0):
         binary = str(-int(binary))
         return ('-' + str(binToDec(binary)))
+    else:
+        return '0'
 def hexToDec(hexadecimal):
-    pass
+    '''gets an hexadecimal as a string and returns a string decimal'''
+    hexadecimal_unsigned = ''
+    decimal = 0
+    sign_present = False
+    for i in hexadecimal: #checks if hex value has a '-' and removes it
+        if i == '-':
+            sign_present = True #if it's true, we'll add it again after the conversion
+        else:
+            hexadecimal_unsigned += i
+    for index, value in enumerate(hexadecimal_unsigned): #for every char in the unsigned hexadecimal
+        try:
+            digit_value = int(value) #we add the int value if we can convert it to int
+        except ValueError:
+            digit_value = cToHex[value.upper()] #we convert a letter to int with the dictionary if the ValueError happens #.upper makes sure it's a capital char like in the dict
+        decimal += digit_value*16**(len(hexadecimal_unsigned)-1-index) # we add to the final decimal value the value of the digit multiplied to the base**index reversed
 
+    if sign_present == True:
+        return ('-' + str(decimal))
+    else:
+        return str(decimal)
+def octToDec(octal):
+    '''gets a octal string and returns a string int'''
+    if (int(octal) > 0): #i can do this because octal is considered an int
+        decimal = 0
+        octal_list = [int(x) for x in str(octal)] #this converts the octal string to a list of digits
+        for index, value in enumerate(octal_list):
+            #print(f'Index: {index}\nValue: {value}\nDecimal: {decimal}\nOppsite index: {(len(octal_list)-1-index)}') #debugger
+            decimal += value*8**(len(octal_list)-1-index)
+        return str(decimal)
+    elif (int(octal) < 0):
+        octal = str(-int(octal))
+        return ('-' + str(octToDec(octal)))
+    else:
+        return '0'
 
-'''[____MAIN____]'''
-while(True):
-    menu_base = menuBase()
-    base = menuChoiches[menu_base]
-    conversionTo = menuConversion()
-    convert = menuChoiches[conversionTo]
-    #Your choice:
+def main():
+    while(True):
+        global base
+        global convert 
+        global user_input
+        menu_base = menuBase()
+        base = menuChoiches[menu_base]
+        conversionTo = menuConversion()
+        convert = menuChoiches[conversionTo]
+        infoChoicheMenu()
+        if (base == 'Decimal'):
+            decimal = getDec()
+            user_input = decimal
+            if (convert == 'Binary'):
+                binary = decToBin(decimal)
+                printResult(binary)
+            elif (convert == 'Decimal'):
+                printResult(decimal)
+            elif (convert == 'Octal'):
+                octal = decToOct(decimal)
+                printResult(octal)
+            elif (convert == 'Hexadecimal'):
+                hexadecimal = decToHex(decimal)
+                printResult(hexadecimal)
+            else:
+                pass #This should be unreachable code
+        elif (base == 'Binary'):
+            binary = getBin()
+            user_input = decimal
+            if (convert == 'Binary'):
+                printResult(binary)
+            elif (convert == 'Decimal'):
+                decimal = binToDec(binary) 
+                printResult(decimal)
+            elif (convert == 'Octal'):
+                decimal = binToDec(binary)
+                octal = decToOct(decimal)
+                printResult(octal) 
+            elif (convert == 'Hexadecimal'):
+                decimal = binToDec(binary)
+                hexadecimal = decToHex(decimal)
+                printResult(hexadecimal)
+            else:
+                pass #This should be unreachable code
+        elif (base == 'Octal'):
+            octal = getOct()
+            user_input = decimal
+            if (convert == 'Binary'):
+                decimal = octToDec(octal)
+                binary = decToBin(decimal)
+                printResult(binary)
+            elif (convert == 'Decimal'):
+                decimal = octToDec(octal)
+                printResult(decimal)
+            elif (convert == 'Octal'):
+                printResult(octal)
+            elif (convert == 'Hexadecimal'):
+                decimal = octToDec(octal)
+                hexadecimal = decToHex(decimal)
+                printResult(hexadecimal)
+            else:
+                pass #This should be unreachable code
+        elif (base == 'Hexadecimal'):
+            hexadecimal = getHex()
+            user_input = decimal
+            if (convert == 'Binary'):
+                decimal = hexToDec(hexadecimal)
+                binary = decToBin(decimal)
+                printResult(binary)
+            elif (convert == 'Decimal'):
+                decimal = hexToDec(hexadecimal)
+                printResult(decimal)
+            elif (convert == 'Octal'):
+                decimal = hexToDec(hexadecimal)
+                octal = decToOct(decimal)
+                printResult(octal)
+            elif (convert == 'Hexadecimal'):
+                printResult(hexadecimal)
+            else:
+                pass #This should be unreachable code
+        exitMenu()
+         
+def exitMenu():
+    while(True): #Exit menu
+            try:
+                #print('\n')
+                print('________________________________________')
+                printIn("Insert '1' to restart or '0' to exit: ")
+                in_ = input() #will raise a ValueError if casting fails
+                assert checkChars(in_, ['0', '1'])
+                if (int(in_) == 0):
+                    exit()
+                elif (int(in_) == 1):
+                    break #restart program
+            except AssertionError:
+                printError('You didn\'t enter a 0 or 1')
+            except ValueError:
+                printError('You didn\'t enter a number')
+    
+def infoChoicheMenu(): #what you choose
     clear()
     printOk('Input recieved')
-    printInfo(f'You choose to convert ({base}) to ({convert})')
-    if (base == 'Decimal'):
-        decimal = getDec()
-        if (convert == 'Binary'):
-            binary = decToBin(decimal)
-            printResult(binary)
-        elif (convert == 'Decimal'):
-            printResult(decimal)
-        elif (convert == 'Octal'):
-            octal = decToOct(decimal)
-            printResult(octal)
-        elif (convert == 'Hexadecimal'):
-            hexadecimal = decToHex(decimal)
-            printResult(hexadecimal)
-        else:
-            pass #This should be unreachable code
-    elif (base == 'Binary'):
-        binary = getBin()
-        if (convert == 'Binary'):
-            printResult(binary)
-        elif (convert == 'Decimal'):
-            decimal = binToDec(binary) 
-            printResult(decimal)
-        elif (convert == 'Octal'):
-            decimal = binToDec(binary)
-            octal = decToOct(decimal)
-            printResult(octal) 
-        elif (convert == 'Hexadecimal'):
-            decimal = binToDec(binary)
-            hexadecimal = decToHex(decimal)
-            printResult(hexadecimal)
-        else:
-            pass #This should be unreachable code
-    elif (base == 'Octal'): #TODO
-        octal = getOct()
-        if (convert == 'Binary'):
-            printError("Still working on it ") #TODO
-        elif (convert == 'Decimal'):
-            printError("Still working on it ") #TODO
-        elif (convert == 'Octal'):
-            printResult(octal)
-        elif (convert == 'Hexadecimal'):
-            printError("Still working on it ") #TODO
-        else:
-            pass #This should be unreachable code
-    elif (base == 'Hexadecimal'): #TODO
-        hexadecimal = getHex()
-        if (convert == 'Binary'):
-            printError("Still working on it ") #TODO
-        elif (convert == 'Decimal'):
-            printError("Still working on it ") #TODO
-        elif (convert == 'Octal'):
-            printError("Still working on it ") #TODO
-        elif (convert == 'Hexadecimal'):
-            printResult(hexadecimal)
-        else:
-            pass #This should be unreachable code
-    
-    while(True): #Exit menu
-        try:
-            print('\n')
-            printIn("Insert '1' to restart or '0' to exit: ")
-            in_ = input() #will raise a ValueError if casting fails
-            assert checkChars(in_, ['0', '1'])
-            if (int(in_) == 0):
-                exit()
-            elif (int(in_) == 1):
-                break #restart program
-        except AssertionError:
-            printError('You didn\'t enter a 0 or 1')
-        except ValueError:
-            printError('You didn\'t enter a number')
+    printInfo(f'You choose to convert {base} to {convert}')  
+
+def printResult(result): #I can declare it here using the "main link": if __name__ == '__main__', for more see: (https://stackoverflow.com/questions/3754240/declare-function-at-end-of-file-in-python)
+    clear()
+    #print('_________________________')
+    printOk('Result calculated')
+    printInfo(f'You converted from {base} to {convert} the number {user_input}')
+    printInfo(f'Your result is: =>| {result} |<=')
+    #print('_________________________')
+
+if __name__ == '__main__': #this links to main(), is the start of the program in the end.
+    main()
