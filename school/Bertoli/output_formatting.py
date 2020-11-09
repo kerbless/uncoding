@@ -24,19 +24,17 @@ def slowprint(string):
         time.sleep(.02)
     print('') #Saves the newline function at the end of every slowprint()
 
-def slowprint_continue(string):
-    for i in string:
-        print(i, end='', flush=True)
-        time.sleep(.02)
+def print_continue(string):
+    print(string, end='', flush=True)
 
 def printInfo(text):
-    slowprint(p_info + p_end + text)
+    print(p_info + p_end + text)
 
 def printError(text):
-    slowprint(p_error + p_end + text)
+    print(p_error + p_end + text)
 
 def printOk(text):
-    slowprint(p_ok + p_end + text)
+    print(p_ok + p_end + text)
 
 def printIn(text):
-    slowprint_continue(p_in + p_end + text)
+    print_continue(p_in + p_end + text)
