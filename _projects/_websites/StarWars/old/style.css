@@ -1,0 +1,146 @@
+body {
+	font-family: "Raleway", sans-serif;
+	font-size: 14px;
+	background-image: url("https://images.pexels.com/photos/235994/pexels-photo-235994.jpeg?cs=srgb&dl=bright-design-floor-235994.jpg&fm=jpg"); /*url("http://hdqwalls.com/wallpapers/mac-os-sierra-color-splash-purple-do.jpg");*/
+	background-size: 100%;
+	z-index: -1;
+}
+
+header {
+	text-align: center;
+	background: rgba(0, 0, 0, 0.1);
+	font-size: 40px;
+}
+
+nav {
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0px 80px;
+	font-size: 18px;
+}
+
+nav ul {
+	list-style-type: none; /* removes the default list bubbles */
+	text-align: center; /*center all the elements of the list*/
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0px 60px;
+	display: block; /*display: BLOCK; = Displays an element as a block element (like <p>). 
+                    It starts on a new line, and takes up the whole width*/
+}
+
+nav ul li {
+	display: inline; /* display the list inline (remember to use it one every member, not on the list itself */
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0px 40px;
+}
+
+nav ul li a {
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0px 20px;
+	text-decoration: none; /*removes the link aspect of the text (underline) */
+	color: black; /*removes the link aspect of the text (color) */
+	/*animation-duration: 1s;
+	animation-name: fadeInButton;  WHY THIS DOESN't WORK?
+    animation: backwards;
+    animation-timing-function: ease;*/
+}
+
+nav ul li a:hover {
+	/*change aspect on hover*/
+	animation-duration: 1.5s;
+	animation-name: fadeInButton;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards; /*makes the animation stops on last frame*/
+}
+@keyframes fadeInButton {
+	0% {
+		background: rgba(255, 145, 0, 0);
+		outline: 9999px solid rgba(0, 0, 0, 0);
+	}
+	/*50% {
+      background: rgba(255,145,0, 0.75);
+    }*/
+	100% {
+		background: rgb(255, 255, 255);
+		outline: 9999px solid rgba(0, 0, 0, 0.4);
+	}
+}
+
+/*aside {
+	position: absolute;  the position is relative to its parent (html doc in this case) 
+	top: 0px;
+	right: 0px;
+	height: 100%;
+	width: 50px;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.1);
+}*/
+
+section {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+section h2{
+	background: rgba(0, 0, 0, 0.1);
+	text-align: center;
+	font-size: 18px;	
+	font-weight: 200;
+}
+
+article {
+	position: absolute;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+article.artOne {
+	background: rgba(0, 0, 0, 0.1);
+	height: 400px;
+	width: 45%;
+}
+
+article.artTwo {
+	background: rgba(0, 0, 0, 0.1);
+	height: 400px;
+	width: 45%;
+	position: absolute;
+	right: 10px;
+}
+
+
+article h4 {
+	background: rgba(0, 0, 0, 0.1);
+	position: relative;
+	text-align: center;
+}
+
+article p {
+	background: rgba(0, 0, 0, 0.1);
+	position: relative;
+	left: 10px;
+	right: 10px;
+}
+
+article:hover {
+	animation-duration: 1.5s;
+	animation-name: fadeInArticle;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards; /*makes the animation stops on last frame*/
+}
+@keyframes fadeInArticle {
+	0% {
+		outline: 9999px solid rgba(0, 0, 0, 0);
+	}
+	100% {
+		outline: 9999px solid rgba(0, 0, 0, 0.4);
+	}
+}
+
+footer {
+	/* the footer should NOT be visible when zooming, and stay on bottom after scrolling*/
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	font-size: 10px;
+	height: 5%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.1);
+}
