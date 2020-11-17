@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1519732646 source:d:\other\coding\codeblocks\checkcode\checkcode.cpp
+	<iostream>
+	"rlutil.h"
+	<fstream>
+
+1464936568 d:\other\coding\codeblocks\checkcode\rlutil.h
+	<iostream>
+	<string>
+	<cstdio>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<conio.h>
+	<termios.h>
+	<unistd.h>
+	<sys/ioctl.h>
+	<sys/types.h>
+	<sys/time.h>
+
