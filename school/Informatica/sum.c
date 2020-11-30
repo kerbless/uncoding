@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-main() {
+int main() {
 	float num1, num2, sum; //not initializing, waiting for some kind of input check
 	printf("Inserisci due numeri separati da uno spazio e premi invio: "); 
 	scanf("%f %f", &num1, &num2);
