@@ -1,5 +1,4 @@
-.vscode
-.out
-.
-.exe
-.o
+*.vscode
+*.out
+*.exe
+*.o
