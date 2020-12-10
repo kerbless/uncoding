@@ -61,6 +61,7 @@ int main(){
     printf("\nL'alunno %d e' il piu' grande con un'eta' di %d anni", piu_grande, eta_maggiore);
 }
 
+
 /* OLD VERSION WITHOUT ARRAYS
 int main() {
     int alumns = 0, age = 0, age_sum = 0, absents = 0;
