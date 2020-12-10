@@ -28,11 +28,15 @@ int main(){
         */
         somma += eta[i];
     }
-    media = somma / (alunni - assenti);
-    //funziona, ma con 0, 6, 5 mi da 5??
 
+    media = (float)somma / (alunni - assenti); 
     /*
+    è necessario fare il casting di almeno uno dei due operandi da int a float
+    in quanto l'operatore "/" casta automaticamente in int un risultato di due int
+    */
+
     //debug
+    /*
     for(int i = 0; i < (sizeof(eta)/sizeof(eta[0])); i++) {
         printf("\nEta[%d]: %d", i, eta[i]);
     }
