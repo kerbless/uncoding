@@ -8,6 +8,7 @@ typedef char cmatrix[5][50];
 
 /* MAIN */
 int main() {
+    
     /* Variables */
     fvect price, i_total;
     ivect quantity;
