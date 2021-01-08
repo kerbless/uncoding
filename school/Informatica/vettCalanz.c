@@ -35,9 +35,9 @@ int main() {
     /* Output */
     printf("\n\tArticolo | Quantita' | Prezzo unitario | Prezzo totale | Descrizione\n");
     for(int i = 0; i < 5; i++) {
-        printf("\n\t%d\t | %d\t     | %f\t       | %f      | %s", i+1, quantity[i], price[i], i_total[i], descriptions[i]);
+        printf("\n\t%d\t | %d\t     | %.2f\t       | %.2f        | %s", i+1, quantity[i], price[i], i_total[i], descriptions[i]);
     }
-    printf("\nTotale: %f", total);
+    printf("\nTotale: %.2f", total);
 
     return 0;
 }
