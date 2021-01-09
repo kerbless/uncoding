@@ -4,7 +4,7 @@
 //main
 int main(){
     //variables
-    int alunni = 0, assenti = 0, somma = 0;
+    int alunni = 0, assenti = 0, somma = 0, piu_grande, eta_maggiore = 0;
     float media;
 
     //input 
@@ -20,22 +20,36 @@ int main(){
     //elaboration
     for(int i = 0; i < alunni; i++){
         /*
-        si potrebbe tranquillamente inserire questa istruzione 
+        si potrebbe tranquillamente inserire queste istruzioni
         nel ciclo precedente, ma supponiamo che il programma sia 
         pensato per eseguire diversi tipi di operazioni con l'array 
         eta, pertanto separiamo i cicli per chiarire la distanza logica
-        tra le due operazioni di input ed elaborazione
+        tra le due sezioni di codice di input ed elaborazione
         */
+        if (eta[i] > eta_maggiore) {
+            eta_maggiore = eta[i];
+            piu_grande = i+1;
+        }
         somma += eta[i];
     }
-    media = somma / (alunni - assenti);
-    //funziona, ma con 0, 6, 5 mi da 5??
 
+    media = (float)somma / (alunni - assenti); 
     /*
+    è necessario fare il casting di almeno uno dei due operandi da int a float
+    in quanto l'operatore "/" casta automaticamente in int un risultato di due int
+    */
+
     //debug
-    for(int i = 0; i < (sizeof(eta)/sizeof(eta[0])); i++) {
+    int dimensione_vettore = (sizeof(eta)/sizeof(eta[0])); //counts elements using bitsize
+    printf("\nStampa elementi vettori da i = 0 a i < dimensione_vettore:");
+    for(int i = 0; i < dimensione_vettore; i++) { 
         printf("\nEta[%d]: %d", i, eta[i]);
     }
+    printf("\nStampa elementi vettori da i = 1 a i <= dimensione_vettore:");
+    for(int i = 1; i <= dimensione_vettore; i++) {
+        printf("\nEta[%d]: %d", i, eta[i]);
+    }
+    /*
     printf("\nSomma: %d", somma);
     printf("\nAlunni: %d", alunni);
     printf("\nAssenti: %d", assenti);
@@ -43,8 +57,10 @@ int main(){
     */
     
     //output
-    printf("\nLa classe costituita da %d alunno/i, di cui %d assente/i, ha un'eta' media di: %.2f anni.", alunni, assenti, media);
+    printf("\n\nLa classe costituita da %d alunno/i, di cui %d assente/i, ha un'eta' media di: %.2f anni.", alunni, assenti, media);
+    printf("\nL'alunno %d e' il piu' grande con un'eta' di %d anni", piu_grande, eta_maggiore);
 }
+
 
 /* OLD VERSION WITHOUT ARRAYS
 int main() {
