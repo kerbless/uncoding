@@ -1,6 +1,6 @@
 '''
 TODO I want this file to be a class with a method printplus()
-I want printplus to accept "dinamically" (with overloading?) these arguments (I included the default value): 
+I want printplus to accept "dinamically" (with overloading? -> you can't do it /w python) these arguments (I included the default value): 
 str text, slowprint=True, continue=False, tag=None
 tags are the p_info etc you see in the code below
 
