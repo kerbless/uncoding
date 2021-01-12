@@ -1,30 +1,132 @@
+/* ------------ NOTES ------------ */
 /* Color Palettes
-Background: #FFFCF2;
+Background: #FFFCF2; #f9e6d7
 Background*: #ccc5b9;
 Font: #252422;
 Font*: #ff3366;
 */
 
+/* ------------ GENERAL ------------ */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 body {
+	background-color: #f9e6d7;
+	
+	/* box */
+	margin: 1% 10% 2% 10%; /* top right bottom left*/
+
+	/* text */
 	font-family: 'Lato', sans-serif;
-	color: #252422;
-	background-color: #FFFCF2;
 }
 
+p {
+	/* text */
+	text-align: center;
+	font-size: 1.5m;
+}
+
+img {
+	/* debug */
+	border: 1px solid black;
+}
+
+/* ------------ PAGE ------------ */
 header {
-	display: flex;
-	flex: initial;
-	font-family: 'Bebas Neue', serif;
-	font-size: 4em;
-	font-weight: bold;
-	justify-content: center;
-	margin-bottom: 50px;
-	/*background-color: #ccc5b9;*/
-	background-color: rgba(0, 0, 0, 0.1);
+	/* debug */
+	display: block; /* this is default for a lot of elements */
 	
+	/* box */
 }
 
-
-div .title {
+.title {
+	/* debug */
+	border-bottom: 1px solid black;
 	
+	/* text */
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Teko', sans-serif;
+	font-size: 4.5em;
+	letter-spacing: 20px;
+}
+
+.topnav {
+	/* box */
+	padding: 0.5% 5%;
+
+	/* flex */
+	display: flex;
+	justify-content: center;
+}
+
+.topnav p{
+	/* box */
+	margin: 0.4% 1%;
+
+	/* flex */
+	display: flex;
+	justify-content: center;
+}
+
+.content {
+	/* flex */
+	display: flex;
+	justify-content: space-around;
+}
+
+.news {
+	/* debug */
+	padding: 5px 5px;
+	border: 1px solid black;
+	margin: 10px;
+	
+	/* flex */
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.newsbox {
+	/* debug */
+	border: 1px solid black;	
+
+	/* box */
+	padding: 1% 5%;
+	margin: 5px;
+
+	/* text */
+	text-align: center;
+	
+	/* flex */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.newsbox h1 {
+	/* debug */
+	border: 1px solid black;
+	
+	font-family: 'Oswald', sans-serif;
+}
+
+.leftbar {
+	/* debug */
+	border: 1px solid black;
+
+	/* box */
+}
+
+.rightbar {
+	/* debug */
+	border: 1px solid black;
+
+	/* box */
+}
+
+footer {
+
 }
