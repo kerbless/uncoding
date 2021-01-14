@@ -4,11 +4,6 @@
 using namespace std;
 
 /*
-    APPUNTI
-
-*/
-
-/*
     Color Codes
 
 0 Black
