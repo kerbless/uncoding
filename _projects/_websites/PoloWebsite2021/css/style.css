@@ -110,6 +110,12 @@ header {
 .newsbox h1 {
 	/* debug */
 	border: 1px solid black;
+	margin-bottom: 50px;
+	/*background-color: #ccc5b9;*/
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+div .title {
 	
 	font-family: 'Oswald', sans-serif;
 }
