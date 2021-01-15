@@ -24,10 +24,10 @@ h1 {
 
 header {
     color: #7261A3;
-    width: 20%;
 }
 
 .logo-box {
+    width: 20%;
     text-align: center;
 }
 
@@ -59,8 +59,14 @@ header {
 
 }
 
+.poetry:before {
+    content:'...';
+    background:linear-gradient(transparent 150px, black);
+}
+
 .poetry {
-    border: 1px solid black;
+    overflow: hidden;
+    text-overflow: ellipsis;
     height: 150px;
 }
 
@@ -72,4 +78,19 @@ header {
     font-size: 1em;
     text-align: center;
     color: #7261A3;
+}
+
+.poetry:hover {
+	animation-name: text;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+@keyframes text {
+	0% {
+	}
+	100% {
+		overflow:scroll;
+	}
 }
