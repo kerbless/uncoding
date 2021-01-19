@@ -16,140 +16,74 @@ Font*: #ff3366;
 
 body {
 	background-color: #f9e6d7;
-	
-	/* box */
-	margin: 1% 10% 2% 10%; /* top right bottom left*/
-
-	/* text */
+	margin: 1% 10% 0.5% 10%; /* top right bottom left*/
 	font-family: 'Lato', sans-serif;
 }
 
 p {
-	/* text */
-	text-align: center;
-	font-size: 1.5m;
-}
-
-img {
-	/* debug */
-	border: 1px solid black;
+	color: #252422;
 }
 
 a {
 	text-decoration: none;
-	color: inherit; /*  take the computed value of the property from its parent element*/
-}
-/* ------------ PAGE ------------ */
-header {
-	/* debug */
-	display: block; /* this is default for a lot of elements */
-	
-	/* box */
+	color: inherit; /* take the computed value of the property from its parent element */
 }
 
 .title {
-	/* debug */
 	border-bottom: 1px solid black;
-	
-	/* text */
 	text-align: center;
 	text-transform: uppercase;
 	font-family: 'Teko', sans-serif;
-	font-size: 4em;
-	letter-spacing: 10px;
+	font-size: 5em;
+	letter-spacing: 7px;
 }
 
 .nav {
-	/* box */
-	padding: 0.5% 5%;
-
-	/* flex */
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 }
 
-.nav p{
-	/* box */
-	margin: 0.4% 1%;
-
-	/* flex */
+.navitem {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 }
 
 .content {
-	/* flex */
 	display: flex;
 	justify-content: space-around;
 }
 
 .news {
-	/* debug */
 	padding: 5px 5px;
 	border: 1px solid black;
 	margin: 10px;
-	
-	/* flex */
 	display: flex;
 	flex-wrap: wrap;
 }
 
 .newsbox {
-	/* debug */
 	border: 1px solid black;	
-
-	/* box */
 	padding: 1% 5%;
 	margin: 5px;
-
-	/* text */
 	text-align: center;
-	
-	/* flex */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
 .newsbox h1 {
-	/* debug */
 	border: 1px solid black;
 	margin-bottom: 50px;
 	/*background-color: #ccc5b9;*/
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-div .title {
-	
+div .title {	
 	font-family: 'Oswald', sans-serif;
 }
 
-.leftbar {
-	/* debug */
-	border: 1px solid black;
-
-	/* box */
-}
-
-.rightbar {
-	/* debug */
-	border: 1px solid black;
-
-	/* box */
-}
 
 footer {
-	/* debug */
 	border: 1px solid black;
 }
 
-.arrow {
-	border: solid black;
-  	border-width: 0 3px 3px 0;
-	padding: 3px;
-	height: 3px;
-}
-
-.down {
-	transform: rotate(45deg);
-}
