@@ -1,10 +1,12 @@
 * {
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* tells the browser to account for any border and padding in the values you specify for an element's width and height. If you set an element's width to 100 pixels, that 100 pixels will include any border or padding you added, and the content box will shrink to absorb that extra width. This typically makes it much easier to size elements. */
 }
 
 body {
+    padding: 1% 20% 4% 20%;
     background-color: seashell;
     font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -17,22 +19,45 @@ header {
 
 header .title {
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
-header .title img {
+header .title .imgbox {
     position: relative;
-    margin-right: 1em;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+header .title img {
     width: 5em;
     height: 5em;
 }
 
-header h1 {
+header h1 {    
     font-family: 'Poppins', sans-serif;
     font-weight: 700;
     font-size: 5em;
     text-transform: uppercase;
+}
+
+.typewrite {
+    overflow: hidden;
+    white-space: nowrap; 
+    
+    width: 0;
+    animation: typing 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+        margin-right: 50%;}
+    to {
+        width: 100%;
+        margin-right: 0%;
+    }
 }
 
 header ul {
@@ -40,6 +65,7 @@ header ul {
 }
 
 header li {
+    margin: 10px;
     padding: 10px;
     display: inline;
 }
