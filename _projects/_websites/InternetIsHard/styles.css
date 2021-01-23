@@ -5,92 +5,47 @@
 }
 
 body {
-    /*background-image: url("images/background.jpg");
-    opacity: 0.9;
-    background-size: 100%; 
-    */
-    background-color: #f3f9d2;
-    padding: 1%;
-    margin: 1%;
-    color: #252627;
-    font-family: 'Josefin Sans', sans-serif;;
-}
-
-h1 {   
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 1em;
+    background-color: seashell;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 header {
-    color: #7261A3;
-}
-
-.logo-box {
-    width: 20%;
-    text-align: center;
-}
-
-.logo {
-    text-transform: uppercase;
-    font-size: 3em;
-}
-
-.slogan {
-    font-size: 0.8em; 
-}
-
-.slogan strong {
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.sidebar {
-    width: 20%;
-}
-
-.sidebar h1 {  
-    font-size: 1.5em;
-}
-
-.content {
-    margin-top: 50px;
     display: flex;
-
+    flex-direction: column;
+    align-items: center;
 }
 
-.poetry:before {
-    content:'...';
-    background:linear-gradient(transparent 150px, black);
+header .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-.poetry {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 150px;
+header .title img {
+    position: relative;
+    margin-right: 1em;
+    width: 5em;
+    height: 5em;
 }
 
-.poetry h1 {
-    font-size: 1.4em;
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 5em;
+    text-transform: uppercase;
 }
 
-.poetry h2 {
-    font-size: 1em;
-    text-align: center;
-    color: #7261A3;
+header ul {
+    list-style-type: none;
 }
 
-.poetry:hover {
-	animation-name: text;
-	animation-duration: 0.5s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease;
+header li {
+    padding: 10px;
+    display: inline;
 }
 
-@keyframes text {
-	0% {
-	}
-	100% {
-		overflow:scroll;
-	}
+header a {
+    text-transform: capitalize;
+    color: black;
+    text-decoration: none;
 }
