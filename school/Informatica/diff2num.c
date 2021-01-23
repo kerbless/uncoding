@@ -30,8 +30,8 @@ int main() {
 }
 
 int bring_up(int *high, int *low) {//implementation (definition)
-	int i = 0;
-	printf("\n_________bring up_________");
+    int i = 0;
+    printf("\n_________bring up_________");
     while(*high > *low) {
         *low = *low + 1;
         i++;
