@@ -2,8 +2,9 @@
 #include <math.h>
 
 /* User defined libs */
-//#include <deltalib.h> // <> are used to fetch default compiler folders FIRST
-#include <deltalib.h> //in fact this works even if deltalib.h is in  the "C:\Program Files (x86)\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include" directory
+#include <deltalib.h> // <> are used to fetch default compiler folders ("C:\Program Files (x86)\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include")
+//#include "deltalib.h" // "" are used to fetch workspace folder (./) 
+//https://stackoverflow.com/questions/21593/what-is-the-difference-between-include-filename-and-include-filename
 
 //main
 int main() {
