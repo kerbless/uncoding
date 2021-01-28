@@ -1,0 +1,64 @@
+* {
+    border: 1px solid white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 1% 10% 4% 10%;
+    background-color: mediumslateblue;
+    color: seashell;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+a {
+    color: seashell;
+    text-decoration: none;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+header li {
+    display: inline;
+}
+
+.content-box {
+    margin: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.content-box .title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 5em;
+    text-transform: uppercase;
+}
+
+footer {
+    display: flex;
+    justify-content: left;
+}
+
+footer .column-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 5px;
+}
+
+footer h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+footer p {
+    padding-left: 10px;
+}
