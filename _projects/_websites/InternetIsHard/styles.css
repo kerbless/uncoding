@@ -47,7 +47,6 @@ header h1 {
     width: 0;
     animation: slidex 2s ease-in-out;
     animation-fill-mode: forwards;
-    animation-delay: 1s;
 }
 
 @keyframes slidex {

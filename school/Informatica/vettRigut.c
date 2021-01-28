@@ -6,6 +6,9 @@ typedef float fvect[5];
 typedef int ivect[5];
 typedef char cmatrix[5][50];
 
+/* Functions */
+float 
+
 /* MAIN */
 int main() {
     
@@ -17,7 +20,6 @@ int main() {
     int description_max_lenght = 0, description_lenght = 0;
 	int i;
 	
-    /* Input */
     for(i = 0; i < 5; i++) {
         system("cls");
         printf("\n\tARTICOLO %d", i+1);
@@ -27,19 +29,11 @@ int main() {
         scanf("%d", &quantity[i]);
         printf("Prezzo: ");
         scanf("%f", &price[i]);
-    }
-
-    /* Elaboration */
-    for(i = 0; i < 5; i++) {
         i_total[i] = quantity[i] * price[i];
         total +=  i_total[i];
-        /*printf("\nmax: %d\nlenght: %d\n", description_max_lenght, description_lenght);
-        description_lenght = sizeof(descriptions[i]) / sizeof(descriptions[i][0]); //
-        if (description_max_lenght < description_lenght) description_max_lenght = description_lenght; 
-    */}
+    }
 
-    /* Output */
-    //system("cls");
+    system("cls");
     printf("\n\tArticolo | Quantita' | Prezzo unitario | Prezzo totale | Descrizione\n");
     for(i = 0; i < 5; i++) {
         printf("\n\t%d\t | %d\t     | %.2f\t       | %.2f         | %s", 
