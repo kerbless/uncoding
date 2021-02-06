@@ -22,9 +22,20 @@ body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+/* Link styling from https://www.dannyguo.com/blog/animated-multiline-link-underlines-with-css/ */
 a {
     color: seashell;
-    text-decoration: none;
+    text-decoration: none; /* Remove default underline */
+    /* Gradients are manages as images by css, so we use "background-image" */
+    background-image: linear-gradient(currentColor, currentColor); 
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .4s ease;
+}
+
+a:hover, a:focus {
+    background-size: 100% 1px;
 }
 
 header {
@@ -86,15 +97,22 @@ header li:hover::after {
     transform: rotate(-45deg);
 }
 
-
-
 footer {
-    background: rgba(0, 20, 30, 0.98);    
-    padding: 2% 15% 2% 15%;
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 20, 30, 0.98);
     border-top: 1px solid white;
+}
+
+footer .copyright {
+    font-size: 0.5em;
+    text-align: center;
+}
+
+footer .columns {
+    padding: 2% 15% 2% 15%;
     display: flex;
     justify-content: left;
-
 }
 
 footer .column-box:first-child {
@@ -102,6 +120,7 @@ footer .column-box:first-child {
 }
 
 footer .column-box {
+    border: 1px solid white;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
