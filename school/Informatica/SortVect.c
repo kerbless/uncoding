@@ -10,7 +10,7 @@ void printVect(int vect[], int vect_size) {
 }
 
 int main() {
-	/* Variables Gets an int vector and it's size and prints it's values in line*/
+	/* Variables */
 	int vect_size, i, j; 
 	
 	printf("Inserisci il numero di elementi interi da salvare: "); scanf("%d", &vect_size);
@@ -20,7 +20,7 @@ int main() {
 	}
 	printf("Vettore:  "); printVect(vect, vect_size);
 	
-	/* Reorder */
+	/* Reorder vector */
 	for (i = 0; i < vect_size - 1; i++) {
 		for (j = i + 1; j < vect_size; j++) {
 			/*printf("\n\n_____debug_____");
@@ -28,7 +28,7 @@ int main() {
 			printf("\n2. vect[%d]: %d", j,  vect[j]);
 			printf("\nConfronto: %d < %d", vect[j], vect[i]);*/
 			if (vect[j] < vect[i]) {
-				printf("\nConfronto VERO");
+				//printf("\nConfronto VERO"); // still debug stuff
 				int tmp = vect[i];
 				vect[i] = vect[j];
 				vect[j] = tmp;
@@ -39,5 +39,3 @@ int main() {
 	printf("\nOrdinato: "); printVect(vect, vect_size);
 	return 0;
 }
-
-
