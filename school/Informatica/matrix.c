@@ -1,42 +1,26 @@
 // PREPROCESSOR
 #include <stdio.h>
-#include <string.h>
+#define m_size 10 //https://stackoverflow.com/questions/4024318/why-do-most-c-developers-use-define-instead-of-const
 
 // MAIN
 int main() {
-    /* dichiarazione stringa */
-    int maxlenght = 50; 
-    char str[maxlenght], str2[maxlenght]; //Q. how to make it dynamic? (heap stuff?)
-	
-	/* inizializzazione stringa */
-	printf("Inserisci una stringa di max %d caratteri: ", maxlenght);
-	scanf("%s", &str);
-	printf("Inserisci un'altra stringa di max %d caratteri: ", maxlenght);
-	scanf("%s", &str2);
-	
-	/* calcolo lunghezza */
-	int lenght = 0, lenght2 = 0;
-	while (str[lenght] != '\0') {
-		lenght++;
-	}
-	while (str2[lenght2] != '\0') {
-		lenght2++;
-	}
-	
-	/* controllo con funzione di string.h a fini didattici */
-	if(lenght != strlen(str) || lenght2 != strlen(str2)) {
-		return 100;
+    /* dichiarazione matrice */
+    int pythagorean_table[m_size][m_size], i, j;
+    
+	/* inizializzazione matrice */
+	for (i = 0; i < m_size; i++) {
+		for (j = 0; j < m_size; j++) {
+			pythagorean_table[i][j] = (j+1)*(i+1);
+		}
 	}
 	
 	/* output */
-	printf("\nHai inserito le stringhe: '%s' e '%s'.", str, str2);
-	printf("\nLunghe rispettivamente %d e %d caratteri.", lenght, lenght2);
-	printf("\nLe stringhe sono ");
-	if (strcmp(str, str2) == 0) {
-		printf("uguali.");
-	}
-	else {
-		printf("diverse.");
+	printf("%32s", "TABELLA PITAGORICA"); //32 = lunghezza stringa (18) + lunghezza tab (8) + (lunghezza tavola pitagola - lunghezza stringa) / 2
+	for (i = 0; i < m_size; i++) {
+		printf("\n\t");
+		for (j = 0; j < m_size; j++) {
+			printf("%-3d", pythagorean_table[i][j]);
+		}
 	}
 	
     /* end */
