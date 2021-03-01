@@ -114,7 +114,7 @@ void OrdinaVettore(char v[], int d) {
     }
 }
 
-void Scambia( char *a, char *b) {
+void Scambia(char *a, char *b) {
     /* swaps two chars */
     char tmp;
     tmp = *a;
