@@ -3,24 +3,6 @@
 /*___________ Burroni Blu - III BIA ____________*/
 /*______________________________________________*/
 
-/* MODIFICHE EFFETTUATE:
--cambiato il nome della costante MAX in "max"
--rimossa la funzione ChiediDimensionamento non definita
--aggiunti commenti sulle funzioni
--rimossi commenti con i nomi delle funzioni
--rimossi i "return;" delle funzioni di tipo void
--aggiunta una parentesi mancante nella funzione CaricaVettore
--aggiunto alcuni spazi tra operatori matematici e di assegnazione per preferenza di stile
--aggiunti vari commenti
--rimossa la variabile superflua "j" in FusioneVettore e sostituita con i
--rinominata la funzione StampaVettoreVideo in StampaVettore
--raggruppate le dichiarazioni/definizioni delle variabili dove possibile
--rinominata la variabile risp in user_choice
--modificati alcuni printf per preferenza di stile
--cambiata la condizione di while per preferenza di stile
--inizializzata la variabile user_choice ad 1
-*/
-
 // PREPROCESSOR
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,11 +11,14 @@
 
 // FUNCTION PROTOTYPES
 /* all functions work on characters or character vectors */
-void CaricaVettore(char v[], char stringa[], int d); /* loads string into vector v */
-void FusioneVettore(char v1[], char v2[], char v3[], int d1, int d2, int d3); /* merges v1 and v2 vectors into v3 */
-void OrdinaVettore(char v[], int d); /* performs a selection sort on v */
-void Scambia(char *a, char *b); /* swaps two chars */
-void StampaVettore(char v[], int d); /* prints a char vector */
+void load(char vect[], char str[], int size); /* loads string into vector v */
+
+
+
+void merge(char v1[], char v2[], char v3[], int d1, int d2, int d3); /* merges v1 and v2 vectors into v3 */
+void selectionSort(char v[], int d); /* performs a selection sort on v */
+void swap(char *a, char *b); /* swaps two chars */
+void printv(char v[], int d); /* prints a char vector */
 
 // MAIN
 int main(void) {
@@ -84,7 +69,7 @@ int main(void) {
 }
 
 // FUNCTION DEFINITIONS
-void CaricaVettore(char v[], char stringa[], int d) {
+void load(char vect[], char string[], int d) {
     /* loads string into vector v */
     int i;
     for (i = 0; i < d; i++) {
