@@ -40,10 +40,9 @@ int main() {
 
     /* Output */
     //system("cls");
-    printf("\n\tArticolo | Quantita' | Prezzo unitario | Prezzo totale | Descrizione\n");
+    printf("\n\t| Articolo |            Descrizione            | Quantita' | Prezzo unitario | Prezzo totale |\n");
     for(i = 0; i < 5; i++) {
-        printf("\n\t%d\t | %d\t     | %.2f\t       | %.2f         | %s", 
-		i+1, quantity[i], price[i], i_total[i], descriptions[i]);
+        printf("\n\t| %-9d| %-34s| %-10d| %-16.2f| %-14.2f|\n", i+1,  descriptions[i], quantity[i], price[i], i_total[i]);
     }
     printf("\nTotale: %.2f", total);
 
