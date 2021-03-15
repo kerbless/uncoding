@@ -6,7 +6,7 @@
         <title>Blu Burroni</title>
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href='https://fonts.gstatic.com'>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;700&family=Playfair+Display:wght@900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Recursive:wght@400;600&family=Playfair+Display:wght@900&display=swap">
     </head>
     <body>
         <header><nav><ul><li></li></ul></nav></header>
@@ -14,23 +14,27 @@
         <h1>Burro's devices list</h1>
         <section>
             <article>
-                <img src="defpic.jpg">
-                <h1>Desktop PC</h1>
-                <h2>Specifications</h2>
-                <ol>
-                    <li><em>System Name:</em> BLU1060</li>
-                    <li><em>OS Name:</em> Microsoft Windows 10 Pro</li>
-                    <li><em>Version:</em> 10.0.18363 Build 18363</li>
-                    <li><em>System Type:</em> x64-based PC</li>
-                    <li><em>Processor:</em> Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz, 3401 Mhz, 4 Core(s), 8 Logical Processor(s)</li>
-                    <li><em>Motherboard:</em> Gigabyte H110M-S2H-CFLocale: Italy</li>
-                    <li><em>Installed Physical Memory (RAM):</em> 16.0 GB</li>
-                    <li><em>GPU:</em> NVIDIA GeForce GTX 1060 6GB</li>
-                    <li><em>Wi-Fi:</em> Realtek PCIe GbE Family Controller</li>
-                    <li><em>Audio:</em> NVIDIA High Definition Audio</li>
-                    <li><em>HDD:</em> WDC WD10EZEX-60WN4A0 931.39 GB (1,000,067,821,568 bytes)</li>
-                    <li><em>SSD:</em> Crucial_CT275MX300SSD1 254.77 GB (273,560,719,360 bytes)</li>
-                </ol>
+                <div>
+                    <img src="defpic.jpg">
+                </div>
+                <div>
+                    <h1>Desktop PC</h1>
+                    <h2>Specifications</h2>
+                    <ol>
+                        <li><em>System Name:</em> BLU1060</li>
+                        <li><em>OS Name:</em> Microsoft Windows 10 Pro</li>
+                        <li><em>Version:</em> 10.0.18363 Build 18363</li>
+                        <li><em>System Type:</em> x64-based PC</li>
+                        <li><em>Processor:</em> Intel(R) Core(TM) i7-6700 CPU @ 3.40GHz, 3401 Mhz, 4 Core(s), 8 Logical Processor(s)</li>
+                        <li><em>Motherboard:</em> Gigabyte H110M-S2H-CFLocale: Italy</li>
+                        <li><em>Installed Physical Memory (RAM):</em> 16.0 GB</li>
+                        <li><em>GPU:</em> NVIDIA GeForce GTX 1060 6GB</li>
+                        <li><em>Wi-Fi:</em> Realtek PCIe GbE Family Controller</li>
+                        <li><em>Audio:</em> NVIDIA High Definition Audio</li>
+                        <li><em>HDD:</em> WDC WD10EZEX-60WN4A0 931.39 GB (1,000,067,821,568 bytes)</li>
+                        <li><em>SSD:</em> Crucial_CT275MX300SSD1 254.77 GB (273,560,719,360 bytes)</li>
+                    </ol>
+                </div>
             </article>
             <article>
                 <img src="defpic.jpg">
@@ -75,18 +79,33 @@
             aside
         </aside>
         </div>
-        <footer>footer</footer>
+        <footer><p>Copyright © 2021 - Made with ♡ by @Kerbless</p></footer>
     </body>
     <style type = text/css>
     * {margin: 0; padding: 0; box-sizing: border-box;}
+    ::selection {background-color: #413f54; color: #fe654f;}
     header nav ul {list-style: none;}
-    body {background: #fbfaf8; font-family: "Recursive", sans-serif; color: #413f54; font-weight: 400;}
+    body {
+        background:
+        linear-gradient(180deg, rgba(251,250,249,1) 39%, rgba(220,224,217,1) 100%) no-repeat center center fixed,
+            #fbfaf8; 
+        font-family: "Playfair Display", serif; 
+        color: #413f54; 
+        font-weight: 400; 
+        display: flex; 
+        flex-direction: 
+        column; 
+        min-height: 100vh;
+    }
     .content {flex: 1; margin: 0% 10%;}
-    .content > h1 {font-family: "Playfair Display", serif; font-size: 7em; text-align: center;}
+    .content > h1 {font-size: 7em; text-align: center;}
     section {display: flex;}
     section article {border: 1px solid #413f54;}
-    section article > h1 {font-size: 2em;}
-    section article > img {height: 100px; width: 100px;}
-    section article > ol {list-style-type: none;}
+    article h1 {font-size: 2em;}
+    article img {position: relative; height: 100px; width: 100px;}
+    article ol {list-style-type: none; font-family: "Recursive", sans-serif; font-weight: 600; color: #7662e4;}
+    article ol em {color: #413f54;}
+    footer {background-color: #413f54;}
+    footer > p {color: #ef798a; font-weight: 600; font-size: 0.75em; text-align: center; font-family: "Recursive", sans-serif;}
     </style>
 </html>
