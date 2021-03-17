@@ -57,16 +57,12 @@ article {
     }
 }
 
-img {
-    margin-left: 10px;
-    height: 200px;
-}
-
-h1 {
+section h1 {
     font-size: 2em;
+    margin-bottom: 10px;
 }
 
-h2 {
+article h2 {
     color: #fff5ee;
     font-family: "Recursive", sans-serif;
     writing-mode: vertical-rl;
@@ -75,6 +71,12 @@ h2 {
     border-right: solid 1px #fff5ee;
     margin-right: 5px;
 }
+
+article img {
+    margin-left: 10px;
+    height: 200px;
+}
+
 
 article ol {
     /* Value */
