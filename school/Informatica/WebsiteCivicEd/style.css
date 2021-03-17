@@ -27,8 +27,8 @@ body {
     flex: 1;
 }
 
-.content > h1 {
-    font-size: 7em;
+.content>h1 {
+    font-size: 5em;
     text-align: center;
     margin-bottom: 2.5%;
 }
@@ -76,7 +76,8 @@ h2 {
     margin-right: 5px;
 }
 
-article ol { /* Value */
+article ol {
+    /* Value */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -89,7 +90,8 @@ article ol { /* Value */
     overflow: hidden;
 }
 
-article ol em { /* Item */
+article ol em {
+    /* Item */
     color: #fff5ee;
 }
 
@@ -100,24 +102,29 @@ footer {
     font-family: "Recursive", sans-serif;
 }
 
-
-footer > h1 {
+footer>h1 {
     font-size: 1.25em;
 }
 
-footer > p {
+footer>p {
     font-size: 0.75em;
 }
 
 a {
     font-style: italic;
     color: currentColor;
-    text-decoration: none; /* Remove default underline */
-    background-image: linear-gradient(currentColor, currentColor); /* We need an image-like background to do this trick */
-    background-position: 0% 100%; /* Moves the background down and on the left */
-    background-repeat: no-repeat; /* Otherwise the line duplicates to fill avaiable space (?) */
-    background-size: 0% 2px;  /* Sets the height to 1px and shrinks it to make it disappear */
-    transition: background-size .4s ease; /* Brings the line back with animation */
+    text-decoration: none;
+    /* Remove default underline */
+    background-image: linear-gradient(currentColor, currentColor);
+    /* We need an image-like background to do this trick */
+    background-position: 0% 100%;
+    /* Moves the background down and on the left */
+    background-repeat: no-repeat;
+    /* Otherwise the line duplicates to fill avaiable space (?) */
+    background-size: 0% 2px;
+    /* Sets the height to 1px and shrinks it to make it disappear */
+    transition: background-size .4s ease;
+    /* Brings the line back with animation */
 }
 
 a:hover, a:focus {
