@@ -81,21 +81,20 @@ article img {
     width: 100px;
 }
 
-article ol {
+article ol { /* Value */
     list-style-type: none;
     font-family: "Recursive", sans-serif;
     font-weight: 600;
     color: #131316;
 }
 
-article ol em {
+article ol em { /* Item */
     color: #fff5ee;
 }
 
 footer {
     background-color: #7970b1;
     color: #131316;
-    
     text-align: center;
     font-family: "Recursive", sans-serif;
 }
@@ -112,5 +111,17 @@ footer > p {
 
 a {
     font-style: italic;
-    color: inherit;
+    color: currentColor;
+    text-decoration: none; /* Remove default underline */
+    background-image: linear-gradient(currentColor, currentColor); /* We need an image-like background to do this trick */
+    background-position: 0% 100%; /* Moves the background down and on the left */
+    background-repeat: no-repeat; /* Otherwise the line duplicates to fill avaiable space (?) */
+    background-size: 0% 1px;  /* Sets the height to 1px and shrinks it to make it disappear */
+    transition: background-size .4s ease; /* Brings the line back with animation */
 }
+
+a:hover, a:focus {
+    background-size: 100% 1px;
+}
+
+
