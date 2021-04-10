@@ -1,0 +1,39 @@
+/* root */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* importing fonts */
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("resources/fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("resources/fonts/SourceSansPro-Black.ttf");
+    font-weight: bold2;
+}
+
+/* better selection colours */
+::selection {
+    background-color: #f2bac9;
+    color: #1c110a;
+}
+
+/* all body for general styling */
+body {
+    background-color: #f5f2f7;
+    color: #08090a;
+    font-family: "SourceSansPro";
+}
+
+body h1 {
+    font-family: "SourceSansPro";
+    background-color: #bad7f2;
+    text-transform: uppercase;
+    size: 5em;
+    font-weight: bold;
+}
