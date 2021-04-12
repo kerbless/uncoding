@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+/* all links */
+a {
+    text-decoration: none; /* Removes default underline */
+    color: inherit; /* Changes color to match normal text */
+}
+
 /* importing fonts */
 @font-face {
     font-family: "SourceSansPro";
@@ -25,26 +31,139 @@
 
 /* all body for general styling */
 body {
-    background-color: #f5f2f7;
     color: #08090a;
     font-family: "SourceSansPro";
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* keeps footer down with less content */
+}
+
+.background {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url("../resources/images/blue-wave-pattern.jpg") no-repeat center fixed;
+    background-size: cover; /* for the least cool people (strange resizes) */
 }
 
 .contentWrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex: 1; /* pushes the footer down */
+    background: rgba(255, 255, 255, 0.602);
 }
 
 body h1 {
     font-family: "SourceSansPro";
     background-color: #bad7f2;
-    text-transform: uppercase;
     font-weight: bold;
-    /* specific */
-    font-size: 5em;
 }
 
-body section article > h1 {
-    font-size: 3em;
+header h1 {
+    font-size: 10vmin;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section article h1 {
+    font-size: 2em;
+    padding: 10px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+section:first-of-type {
+    margin-top: 2.5%;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 0% 15%;
+    height: 200px;
+    background-color: #d7e2ee; 
+}
+
+section:last-of-type {
+    background-color: #eed7d7;
+}
+
+section article{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 25%;
+    background-color: f5f2f7;
+    width: 25%;
+    height: 150%;
+
+    border-radius: 15px;
+    overflow: hidden; /* avoid border radius craziness https://stackoverflow.com/questions/10995294/border-radius-not-working */
+    background: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    animation: boxshadow-down forwards ease 1s;
+}
+
+section article:hover {
+    animation: boxshadow-up forwards ease 1s;
+}
+
+@keyframes boxshadow-up {
+    from {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    to {
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    }
+}
+@keyframes boxshadow-down {
+    from {
+        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    }
+    to {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+}
+
+section article p {
+    font-size: 1.5em;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    text-align: justify;
+    padding: 10px;
+}
+
+article li {
+    font-size: 1.5em;
+    margin-left: 10%;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: black;
+    /* border-top: 1px solid var(eerie-black); */
+}
+
+footer #copyright {
+    font-size: 0.8vmax;
+    text-align: center;
+    padding-bottom: 1px;
+    color: white;
+}
+
+/* media queries */
+@media only screen and (max-width: 400px) { /* https://stackoverflow.com/questions/32574100/why-media-queries-has-less-priority-than-no-media-queries-css */
+    .content-wrap { /* remove margin from main page content */
+        margin: 0% 0%;
+    }
+
+   
+
+   
 }
