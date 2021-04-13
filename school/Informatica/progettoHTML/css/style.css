@@ -1,43 +1,38 @@
-/*0f0a0a-f5efed-aae5ee-b9e9f1-f42272-fe5d9f*/
-
-/* root */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* all links */
-a {
-    text-decoration: none; /* Removes default underline */
-    color: inherit; /* Changes color to match normal text */
-}
-
 /* importing fonts */
 @font-face {
     font-family: "SourceSansPro";
-    src: url("resources/fonts/SourceSansPro-Regular.ttf");
+    src: url("../resources/fonts/SourceSansPro-Regular.ttf");
 }
-
 @font-face {
     font-family: "SourceSansPro";
-    src: url("resources/fonts/SourceSansPro-Black.ttf");
-    font-weight: bold2;
+    src: url("../resources/fonts/SourceSansPro-Black.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Roboto";
+    src: url("../resources/fonts/Roboto-Regular.ttf")
 }
 
-/* better selection colours */
 ::selection {
-    background-color: #f5efed;
-    color: #0f0a0a;
+    background-color: #fb4b5a;
+    color: #f9f5ff;
 }
 
-/* all body for general styling */
 body {
-    color: #0f0a0a;
-    font-family: "SourceSansPro";
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* keeps footer down with less content */
+    min-height: 100vh; /* keeps footer down even with few content */
+}
+
+p, li {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5em;
 }
 
 .background {
@@ -50,103 +45,62 @@ body {
     background-size: cover; /* for the least cool people (strange resizes) */
 }
 
-.contentWrapper {
-    flex: 1; /* pushes the footer down */
-    background: rgba(255, 255, 255, 0.602);
-}
-
-body h1 {
-    font-family: "SourceSansPro";
-    background-color: #bad7f2;
-    font-weight: bold;
+header {
+    background-color: #f9f5ff;
 }
 
 header h1 {
-    font-size: 10vmin;
+    font-family: "SourceSansPro";
+    font-size: 5em;
+    text-align: center;
     text-transform: uppercase;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-section article h1 {
-    font-size: 2em;
-    padding: 10px;
+article h1 {
+    background-color: #99bbd6;
+    font-family: "SourceSansPro";
+    font-size: 2.5em;
     text-align: center;
     text-transform: capitalize;
 }
 
 section {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    height: 50%;
 }
 
-section article{
-    display: flex;
-    flex-direction: column;
-    background-color: #f5efed;
-    margin: 10px;
+section img {
+    height: 400px;
+}
+
+article {
+    background-color: #f9f5ff;
     border-radius: 15px;
-    overflow: hidden; /* avoid border radius craziness https://stackoverflow.com/questions/10995294/border-radius-not-working */
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    animation: boxshadow-down forwards ease .5s;
-    max-width: 50%;
+    overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
+    margin: 5% 5% 0% 5%;
 }
 
-section article:hover {
-    animation: boxshadow-up forwards ease .5s;
-}
-
-@keyframes boxshadow-up {
-    from {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-    to {
-        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    }
-}
-@keyframes boxshadow-down {
-    from {
-        box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    }
-    to {
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    }
-}
-
-section article p {
-    font-size: 1.5em;
-    /* overflow: hidden; */
-    /* overflow-wrap: anywhere; */
+article p {
     padding: 10px;
 }
 
-article li {
-    font-size: 1.5em;
-    margin-left: 10%;
+.contentWrapper {
+    flex: 1; /* pushes the footer down */
+    background-color: rgba(255, 255, 255, 0.8); /* bakground overlay */
 }
 
-/* footer */
 footer {
+    background-color: #f5efed;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    background: #0f0a0a;
-    /* border-top: 1px solid var(eerie-black); */
 }
 
 footer #copyright {
-    font-size: 0.8vmax;
+    font-size: 0.5em;
     text-align: center;
     padding-bottom: 1px;
-    color: f5efed;
 }
 
-/* media queries */
-@media only screen and (max-width: 400px) { /* https://stackoverflow.com/questions/32574100/why-media-queries-has-less-priority-than-no-media-queries-css */
-    .content-wrap { /* remove margin from main page content */
+@media only screen and (max-width: 400px) {
+    .content-wrap {
         margin: 0% 0%;
     }
 }
