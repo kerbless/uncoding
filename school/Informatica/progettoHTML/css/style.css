@@ -25,13 +25,13 @@ a {
 
 /* better selection colours */
 ::selection {
-    background-color: #f2bac9;
-    color: #1c110a;
+    background-color: #f5efed;
+    color: #0f0a0a;
 }
 
 /* all body for general styling */
 body {
-    color: #08090a;
+    color: #0f0a0a;
     font-family: "SourceSansPro";
     display: flex;
     flex-direction: column;
@@ -74,41 +74,27 @@ section article h1 {
     text-transform: capitalize;
 }
 
-section:first-of-type {
-    margin-top: 2.5%;
-}
-
 section {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    border: 0% 15%;
-    height: 200px;
-    background-color: #d7e2ee; 
-}
-
-section:last-of-type {
-    background-color: #eed7d7;
+    height: 50%;
 }
 
 section article{
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 25%;
-    background-color: f5f2f7;
-    width: 25%;
-    height: 150%;
-
+    background-color: #f5efed;
+    margin: 10px;
     border-radius: 15px;
     overflow: hidden; /* avoid border radius craziness https://stackoverflow.com/questions/10995294/border-radius-not-working */
-    background: white;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    animation: boxshadow-down forwards ease 1s;
+    animation: boxshadow-down forwards ease .5s;
+    max-width: 50%;
 }
 
 section article:hover {
-    animation: boxshadow-up forwards ease 1s;
+    animation: boxshadow-up forwards ease .5s;
 }
 
 @keyframes boxshadow-up {
@@ -130,9 +116,8 @@ section article:hover {
 
 section article p {
     font-size: 1.5em;
-    overflow: hidden;
-    overflow-wrap: anywhere;
-    text-align: justify;
+    /* overflow: hidden; */
+    /* overflow-wrap: anywhere; */
     padding: 10px;
 }
 
@@ -146,7 +131,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    background: black;
+    background: #0f0a0a;
     /* border-top: 1px solid var(eerie-black); */
 }
 
@@ -154,7 +139,7 @@ footer #copyright {
     font-size: 0.8vmax;
     text-align: center;
     padding-bottom: 1px;
-    color: white;
+    color: f5efed;
 }
 
 /* media queries */
@@ -162,8 +147,4 @@ footer #copyright {
     .content-wrap { /* remove margin from main page content */
         margin: 0% 0%;
     }
-
-   
-
-   
 }
