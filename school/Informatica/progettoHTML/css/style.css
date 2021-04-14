@@ -56,31 +56,41 @@ header h1 {
     text-transform: uppercase;
 }
 
-article h1 {
-    background-color: #99bbd6;
-    font-family: "SourceSansPro";
-    font-size: 2.5em;
-    text-align: center;
-    text-transform: capitalize;
-}
-
 section {
     display: flex;
 }
 
-section img {
-    height: 400px;
+article image img {
+    object-fit: scale-down;
 }
 
 article {
+    display: flex;
+    flex: 1;
+}
+
+article text {
     background-color: #f9f5ff;
     border-radius: 15px;
     overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
     margin: 5% 5% 0% 5%;
 }
 
-article p {
-    padding: 10px;
+article text h1 {
+    background-color: #99bbd6;
+    font-family: "SourceSansPro";
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0 .5em;
+}
+
+article text p {
+    padding: .5em;
+}
+
+article text li {
+    margin: 0 1.5em;
 }
 
 .contentWrapper {
