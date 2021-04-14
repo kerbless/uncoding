@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+
+
+section {
+    display: flex;
+}
+
+article img {
+    height: inherit;
+}
+
+article {
+    display: flex;
+    flex: 1;
+    height: 400px;
+    height: 400px;
+}
+
+article text {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
+    margin: 5% 5% 0% 5%;
+}
+
+article text h1 {
+    background-color: #99bbd6;
+    font-family: "SourceSansPro";
+    font-size: 2.5em;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 0 .5em;
+}
+
+article text p {
+    padding: .5em;
+}
+
+article text li {
+    margin: 0 1.5em;
+}
+

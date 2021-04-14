@@ -21,18 +21,13 @@
 
 ::selection {
     background-color: #fb4b5a;
-    color: #f9f5ff;
+    color: white;
 }
 
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* keeps footer down even with few content */
-}
-
-p, li {
-    font-family: "Roboto", sans-serif;
-    font-size: 1.5em;
 }
 
 .background {
@@ -45,8 +40,12 @@ p, li {
     background-size: cover; /* for the least cool people (strange resizes) */
 }
 
+.contentWrapper {
+    flex: 1; /* pushes the footer down */
+}
+
 header {
-    background-color: #f9f5ff;
+    background-color: white;
 }
 
 header h1 {
@@ -56,26 +55,12 @@ header h1 {
     text-transform: uppercase;
 }
 
-section {
-    display: flex;
+p, li {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5em;
 }
 
-article img {
-    height: inherit;
-}
-
-article {
-    display: flex;
-    flex: 1;
-}
-
-article text {
-    background-color: #f9f5ff;
-    border-radius: 15px;
-    overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
-    margin: 5% 5% 0% 5%;
-}
-
+/**/
 article text h1 {
     background-color: #99bbd6;
     font-family: "SourceSansPro";
@@ -93,18 +78,36 @@ article text li {
     margin: 0 1.5em;
 }
 
-.contentWrapper {
-    flex: 1; /* pushes the footer down */
-    background-color: rgba(255, 255, 255, 0.8); /* bakground overlay */
+article {
+    display: flex;
+    margin: 5% 5% 0% 5%;
 }
 
+article text {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
+}
+
+article image {
+    
+}
+
+article img {
+    display: flex;
+    height: fit-content;
+}
+
+
+/**/
+
 footer {
-    background-color: #f5efed;
+    background-color: white;
     width: 100%;
 }
 
-footer #copyright {
-    font-size: 0.5em;
+footer p {
+    font-size: .8em;
     text-align: center;
     padding-bottom: 1px;
 }
