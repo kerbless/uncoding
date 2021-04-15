@@ -6,22 +6,12 @@
 
 /* importing fonts */
 @font-face {
-    font-family: "SourceSansPro";
-    src: url("../resources/fonts/SourceSansPro-Regular.ttf");
+    font-family: "Raleway";
+    src: url("../resources/fonts/Raleway-Bold.ttf");
 }
 @font-face {
-    font-family: "SourceSansPro";
-    src: url("../resources/fonts/SourceSansPro-Black.ttf");
-    font-weight: bold;
-}
-@font-face {
-    font-family: "Roboto";
-    src: url("../resources/fonts/Roboto-Regular.ttf")
-}
-
-::selection {
-    background-color: #fb4b5a;
-    color: white;
+    font-family: "PTSans";
+    src: url("../resources/fonts/PTSans-Regular.ttf");
 }
 
 body {
@@ -37,37 +27,31 @@ body {
     width: 100%;
     height: 100%;
     background: url("../resources/images/blue-wave-pattern.jpg") no-repeat center fixed;
-    background-size: cover; /* for the least cool people (strange resizes) */
+    background-size: cover; /* strange resizes */
 }
 
-.contentWrapper {
+.contentWrapper {   
     flex: 1; /* pushes the footer down */
 }
 
-header {
-    background-color: white;
+h1 {
+    text-transform: capitalize;
+    padding: 5px;
+    font-size: 2.5em;
+    font-family: "Raleway";
+    font-weight: bold;
+    text-align: center;
+    background-color: #6896bd;
 }
 
 header h1 {
-    font-family: "SourceSansPro";
-    font-size: 5em;
-    text-align: center;
+    font-size: 4em;
     text-transform: uppercase;
 }
 
 p, li {
-    font-family: "Roboto", sans-serif;
+    font-family: "PTSans", sans-serif;
     font-size: 1.5em;
-}
-
-/**/
-article text h1 {
-    background-color: #99bbd6;
-    font-family: "SourceSansPro";
-    font-size: 2.5em;
-    text-align: center;
-    text-transform: capitalize;
-    padding: 0 .5em;
 }
 
 article text p {
@@ -80,21 +64,27 @@ article text li {
 
 article {
     display: flex;
-    margin: 5% 5% 0% 5%;
+    margin: 5% 15% 0% 15%;
 }
 
 article text {
-    background-color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    background-color: #f6f3f6;
     border-radius: 15px;
+    box-shadow: 8px 6px 0px 0px #90c2eb, 16px 12px 0px 0px #c2dff1;
+    overflow-wrap: break-word;
     overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
 }
 
-article image {
-    
+article figure {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
 article img {
-    display: flex;
     height: fit-content;
 }
 
@@ -102,7 +92,7 @@ article img {
 /**/
 
 footer {
-    background-color: white;
+    background-color: #c2dff1;
     width: 100%;
 }
 
@@ -113,7 +103,8 @@ footer p {
 }
 
 @media only screen and (max-width: 400px) {
-    .content-wrap {
-        margin: 0% 0%;
+    article {
+        flex-direction: column;
+        margin: 5% 20px 0px 4px;
     }
 }
