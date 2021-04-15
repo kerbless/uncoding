@@ -34,24 +34,24 @@ body {
     flex: 1; /* pushes the footer down */
 }
 
-h1 {
-    text-transform: capitalize;
-    padding: 5px;
-    font-size: 2.5em;
-    font-family: "Raleway";
-    font-weight: bold;
-    text-align: center;
-    background-color: #6896bd;
-}
-
-header h1 {
-    font-size: 4em;
-    text-transform: uppercase;
-}
-
 p, li {
     font-family: "PTSans", sans-serif;
     font-size: 1.5em;
+}
+
+h1 {
+    text-transform: capitalize;
+    padding: 5px;
+    font-size: 2.4em;
+    font-family: "Raleway";
+    font-weight: bold;
+    text-align: center;
+    background-color: #c2dff1;
+}
+
+header h1 {
+    font-size: 5em;
+    text-transform: uppercase;
 }
 
 article text p {
@@ -64,16 +64,24 @@ article text li {
 
 article {
     display: flex;
-    margin: 5% 15% 0% 15%;
+    margin: 4% 10%;
+}
+
+header article {
+    margin-top: 20px;
+}
+
+footer article {
+    margin-bottom: 20px;
 }
 
 article text {
     display: flex;
     flex: 1;
     flex-direction: column;
-    background-color: #f6f3f6;
+    background-color: #e9eef5;
     border-radius: 15px;
-    box-shadow: 8px 6px 0px 0px #90c2eb, 16px 12px 0px 0px #c2dff1;
+    box-shadow: 8px 6px 0px 0px #83b2d8, 16px 12px 0px 0px #6392bb  ;
     overflow-wrap: break-word;
     overflow: hidden; /* https://stackoverflow.com/questions/10995294/border-radius-not-working */
 }
@@ -88,14 +96,6 @@ article img {
     height: fit-content;
 }
 
-
-/**/
-
-footer {
-    background-color: #c2dff1;
-    width: 100%;
-}
-
 footer p {
     font-size: .8em;
     text-align: center;
@@ -105,6 +105,29 @@ footer p {
 @media only screen and (max-width: 400px) {
     article {
         flex-direction: column;
-        margin: 5% 20px 0px 4px;
+        margin: 4px 20px 18px 4px;
+    }
+
+    h1 {
+        text-transform: capitalize;
+        padding: 5px;
+        font-size: 1.8em;
+        font-family: "Raleway";
+        font-weight: bold;
+        text-align: center;
+        background-color: #c2dff1;
+    }
+    
+    header h1 {
+        font-size: 3em;
+        text-transform: uppercase;
+    }
+
+    p, li {
+        font-size: 1.3em;
+    }
+
+    footer p {
+        font-size: .6em;
     }
 }
