@@ -14,6 +14,10 @@
     src: url("../resources/fonts/PTSans-Regular.ttf");
 }
 
+::selection {
+    background-color: lightsalmon;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -32,6 +36,20 @@ body {
 
 .contentWrapper {   
     flex: 1; /* pushes the footer down */
+}
+
+a {
+    text-decoration: none; /* Removes default underline */
+    color: inherit; /* Changes color to match normal text */
+    background-image: linear-gradient(currentColor, currentColor); /* Gradients are managed as images and we need an image-like background to do this trick */
+    background-position: 0% 100%; /* Moves the starting point down and on the left */
+    background-repeat: no-repeat; /* Otherwise the line duplicates itself to fill avaiable space (I think) */
+    background-size: 0% 1px; /* Sets the height to 1px and shrinks it to make it disappear */
+    transition: background-size .4s ease; /* Brings the line back with animation */
+}
+
+a:hover, a:focus {
+    background-size: 100% 1px;
 }
 
 p, li {
@@ -56,6 +74,10 @@ header h1 {
 
 article text p {
     padding: .5em;
+}
+
+article ul.list1 {
+    list-style-type: square;
 }
 
 article text li {
@@ -94,6 +116,7 @@ article figure {
 
 article img {
     height: fit-content;
+    max-height: 300px;
 }
 
 footer p {

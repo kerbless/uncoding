@@ -1,0 +1,12 @@
+TODO
+Add content
+Set images to stay on the center of the height and adjust padding (left)
+Change third article's text
+Change second article's image
+Change link symbol
+Change selection color (?)
+
+LINKS
+https://it.wikipedia.org/wiki/Energia_marina
+https://it.wikipedia.org/wiki/Fonti_di_energia_rinnovabile
+https://en.calameo.com/read/0006724196fd7994f6e52
